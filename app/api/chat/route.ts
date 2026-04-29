@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
     // Build history (all messages except the last one)
     const history = messages.slice(0, -1).map(
       (msg: { role: string; content: string }) => ({
-        role: msg.role === "user" ? "user" : "model",
+        role: msg.role === "user" ? "user" : "assistant",
         parts: [{ text: msg.content }],
       })
     );
